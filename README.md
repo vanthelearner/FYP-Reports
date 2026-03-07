@@ -22,7 +22,7 @@ Pipeline 3: Appling ML models
 
 ---
 
-Results of models as of 07/03/2026. I would call this batch "Kitchen Sink" appoarch (since there was no careful feature engineering, everything (every features) got put into the models) . 
+Results of models as of 07/03/2026. I would call this batch "Kitchen Sink" appoarch (since there was no careful feature engineering, everything, every features got put into the models) . 
 ## Headline Comparison Table
 
 **Prediction horizon reviewed:** 180 monthly out-of-sample periods from **2010-08-31** to **2025-07-31**
