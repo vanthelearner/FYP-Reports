@@ -91,45 +91,9 @@ flowchart TB
     C --> C1
 ```
 
-## 2) File Lineage
 
-> [!info]
-> This view focuses on the main file handoffs.
 
-```mermaid
-flowchart TB
-    subgraph P1["Pipeline 1 Files"]
-        P1S["raw_data/raw_stock_data.csv<br/>2,437,880 rows<br/>699 tickers"]
-        P1M["raw_data/raw_macro_data.csv<br/>6,872 rows<br/>25 columns"]
-    end
-
-    subgraph P2["Pipeline 2 Files"]
-        P2T["outputs/_intermediate/vn_transform.csv"]
-        P2C["outputs/01_data_processing/stock_data_clean_v2_balanced.csv<br/>902,959 rows<br/>590 tickers"]
-        P2MC["outputs/02_macro/macro_data_v2_balanced.csv"]
-        P2MD["outputs/03_model_data/model_data_v2_balanced.csv<br/>787,953 rows<br/>441 tickers"]
-        P2S["outputs/04_model_split/train val test CSVs"]
-        P2B["outputs/07_market_portfolios/market_portfolio_daily_returns.csv<br/>8,850 rows"]
-    end
-
-    subgraph P3["Pipeline 3 Files"]
-        P3RF["data/risk-free.csv<br/>FRED DGS3MO"]
-        P3P["data/panel_input.csv<br/>39,427 rows<br/>437 assets<br/>270 months"]
-        P3BM["data/benchmark_monthly.csv<br/>71 months"]
-        P3RUN["outputs/run_*/...<br/>model results"]
-    end
-
-    P1S --> P2T --> P2C --> P2MD
-    P1M --> P2MC --> P2MD
-    P2MD --> P2S
-    P2MD --> P3P
-    P2B --> P3BM
-    P3RF --> P3P
-    P3P --> P3RUN
-    P3BM --> P3RUN
-```
-
-## 4) Filtering Funnel
+## 2) Filtering Funnel
 
 > [!info]
 > This is the best view for understanding where the stock sample gets cut down.
@@ -140,27 +104,15 @@ flowchart TB
     B["After transform<br/>2,437,880 rows<br/>699 tickers<br/>100.0% of raw"]
     C["After process_stock<br/>902,959 rows<br/>590 tickers<br/>37.0% of raw"]
     D["After build_model_data<br/>787,953 rows<br/>441 tickers<br/>32.3% of raw"]
-    E["Train split<br/>404,311 rows<br/>441 tickers"]
-    F["Validation split<br/>98,762 rows<br/>293 tickers"]
-    G["Test split<br/>284,880 rows<br/>313 tickers"]
+
 
     A --> B --> C --> D
-    D --> E
-    D --> F
-    D --> G
+   
 ```
 
 
-```mermaid
-pie showData
-    title Pipeline 2 Split of Final Model Data Rows
-    "Train" : 404311
-    "Validation" : 98762
-    "Test" : 284880
-```
 
-
-## 5) Pipeline 3 Preparation and Rolling Training Logic
+## 3) Pipeline 3 Preparation and Rolling Training Logic
 
 > [!info]
 > Pipeline 3 does not train directly on Pipeline 2 daily rows. It first converts them into a monthly panel, then applies another preprocessing layer, then rolls windows through time.
@@ -291,7 +243,7 @@ gantt
 ```
 
 
-## 6) Output Taxonomy
+## 4) Output Taxonomy
 
 > [!info]
 > This view is for understanding where the model results are saved and what each output family means.
