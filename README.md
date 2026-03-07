@@ -10,22 +10,21 @@ Pipeline 3: Appling ML models
 
 *(My code will be uploaded soon)*
 
-## What's in this repo:
-- Models Performance Review.pdf: Models have been applied (so far, there are more coming). 
+### What's in this repo:
+- Models Performance.pdf: Models have been applied (so far, there are more coming). 
 - Features Dictionary.md: All the features that will be feed into the models.
 
 
 
-*These models and ideas are mainly inspired by the paper [Empirical Asset Pricing via Machine Learning](https://academic.oup.com/rfs/article/33/5/2223/5758276) by Shihao Gu, Bryan Kelly, Dacheng Xiu*
-
-*My thesis will be focusing in testing out a new dataset, in a new market, and most important with improvement if possible*
+*These models and ideas are mainly inspired by the paper [Empirical Asset Pricing via Machine Learning](https://academic.oup.com/rfs/article/33/5/2223/5758276) by Shihao Gu, Bryan Kelly, Dacheng Xiu. My thesis will be focusing in testing out a new dataset, in a new market, and most important with improvement if possible*
 
 ---
 
-Results of models as of 07/03/2026. I would call this batch "Kitchen Sink" appoarch (since there was no careful feature engineering, everything, every features got put into the models) . 
-## Headline Comparison Table
-
+### Results
 **Prediction horizon reviewed:** 180 monthly out-of-sample periods from **2010-08-31** to **2025-07-31**
+
+- 07/03/2026 batch: I would call this batch "Kitchen Sink" appoarch (since there was no careful feature engineering, everything, every features got put into the models). 
+*more details in the "Models performance.pdf"*
 
 | Model | R2 OOS Full (monthly) | R2 OOS on large companies (monthly) | R2 OOS on small companies (monthly) | Mean Rank Information coefficient  | Long-only Annualized Sharpe | Long-short Annualized Sharpe | Benchmark Information ratio | Long-short Annualized Return |
 | ----- | ----------- | ------------ | ------------ | ------------ | ---------------- | ----------------- | ------------ | ---------- |
@@ -37,7 +36,7 @@ Results of models as of 07/03/2026. I would call this batch "Kitchen Sink" appoa
 | OLS3  | -0.0113     | -0.0116      | -0.0124      | 0.0306       | 0.325            | -0.054            | -0.244       | -4.5%       |
 | OLS   | -0.0143     | -0.0588      | -0.0326      | 0.1044       | 1.265            | 1.301             | 0.034        | 32.8%      |
 
-*Although short selling is prohibited in VN, for the purpose of comparison I still include it in*
+*Note: Although short selling is prohibited in VN, for the purpose of comparison I still include it in*
 
 | Model | Top 1                    | Top 2                  | Top 3              | Top 4                | Top 5                   |
 | ----- | ------------------------ | ---------------------- | ------------------ | -------------------- | ----------------------- |
@@ -48,7 +47,14 @@ Results of models as of 07/03/2026. I would call this batch "Kitchen Sink" appoa
 | GBRT  | US_FedFunds_Rate (0.519) | cash_ratio (0.159)     | mom36m (0.122)     | mom1m (0.119)        | Indonesia_Index (0.111) |
 | RF    | Indonesia_Index (0.133)  | Comm_Gold_Spot (0.073) | USD_VND_FX (0.063) | US_GDP_QoQ (0.061)   | Hong_Kong_Index (0.059) |
 | OLS3  | me (1.215)               | be_me (-0.004)         | ret_12_1 (-0.212)  |                      |                         |
+
+
+- More batches are coming...
 ---
+<br>
+<br>
+
+# How the systems work end to end
 
 ## 1) System Overview
 
