@@ -39,16 +39,6 @@ Results of models as of 07/03/2026. I would call this batch "Kitchen Sink" appoa
 
 *Although short selling is prohibited in VN, for the purpose of comparison I still include it in*
 
-| LS Ann Ret |
-| ---------- |
-| 40.3%      |
-| 32.8%      |
-| 26.5%      |
-| 7.5%       |
-| 4.4%       |
-| 4.4%       |
-| 32.8%      |
-
 ---
 
 ## 1) System Overview
