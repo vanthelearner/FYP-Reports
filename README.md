@@ -51,7 +51,7 @@ Pipeline 3: Appling ML models
 | `Top30_6MRebal_VW` | Top 30 by market cap, reselected every 6 months            | Value     | 6-month   | 7.9%              | 0.47   |
 
 
-<u>This table is the features importance that each model pick</u>
+<u>This table is the features importance that each model pick *(see Features Dictionary.md for details of each features)*</u> 
 
 | Model | Top 1                    | Top 2                  | Top 3              | Top 4                | Top 5                   |
 | ----- | ------------------------ | ---------------------- | ------------------ | -------------------- | ----------------------- |
